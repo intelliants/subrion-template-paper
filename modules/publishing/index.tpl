@@ -50,7 +50,7 @@
 {/if}
 
 {if !empty($articles)}
-    {if !isset($articles_sorting) || $articles_sorting}
+    {*if !isset($articles_sorting) || $articles_sorting}
         <div class="ia-sorting">
             <form action="{$smarty.const.IA_SELF}" method="post" id="sort_form" class="form-inline pull-right m-0">
                 {preventCsrf}
@@ -65,7 +65,7 @@
                 </select>
             </form>
         </div>
-    {/if}
+    {/if*}
 
     <div class="ia-items">
         {foreach $articles as $listing}
