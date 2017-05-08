@@ -7,7 +7,7 @@
         <ul class="b-nav__account">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    {ia_image file=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email}
+                    {ia_image file=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email type='thumbnail'}
                     {$member.fullname|default:$member.username}
                     <span class="caret"></span>
                 </a>
