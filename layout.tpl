@@ -76,29 +76,6 @@
     </head>
 
     <body class="page-{$core.page.name}">
-        {*
-        <div class="inventory">
-            <div class="container">
-                {if $core.config.website_social}
-                    <ul class="nav-inventory nav-inventory-social pull-left hidden-xs">
-                        {if $core.config.website_social_t}<li><a href="{$core.config.website_social_t}" class="twitter"><span class="fa fa-twitter"></span></a></li>{/if}
-                        {if $core.config.website_social_f}<li><a href="{$core.config.website_social_f}" class="facebook"><span class="fa fa-facebook"></span></a></li>{/if}
-                        {if $core.config.website_social_g}<li><a href="{$core.config.website_social_g}" class="google-plus"><span class="fa fa-google-plus"></span></a></li>{/if}
-                        {if $core.config.website_social_i}<li><a href="{$core.config.website_social_i}" class="linkedin"><span class="fa fa-linkedin"></span></a></li>{/if}
-                    </ul>
-                {/if}
-                {if $core.config.search_inventory}
-                    <form method="get" action="{$smarty.const.IA_URL}search/" class="search-inventory pull-right">
-                        <input type="text" name="q" placeholder="{lang key='search'}">
-                        <button type="submit"><span class="fa fa-search"></span></button>
-                    </form>
-                {/if}
-                {include 'language-selector.tpl'}
-                {ia_blocks block='inventory'}
-            </div>
-        </div>
-        *}
-
         <nav class="b-nav">
             <div class="container">
                 <button class="b-nav__toggle-menu pushy-link" type="button"><span></span><span></span><span></span></button>
@@ -135,47 +112,6 @@
             </form>
         </nav>
 
-{*
-        <nav class="navbar navbar-default {if $core.config.navbar_sticky}navbar-sticky{/if}">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand{if !$core.config.enable_text_logo} navbar-brand--img{/if}" href="{$smarty.const.IA_URL}">
-                        {if $core.config.enable_text_logo}
-                            {$core.config.logo_text}
-                        {else}
-                            {if !empty($core.config.site_logo)}
-                                <img src="{$core.page.nonProtocolUrl}uploads/{$core.config.site_logo}" alt="{$core.config.site}">
-                            {else}
-                                <span>Paper</span>
-                            {/if}
-                        {/if}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbar-collapse">
-                    {if $core.config.search_navbar}
-                        <form method="get" action="{$smarty.const.IA_URL}search/" class="search-navbar pull-right">
-                            <button class="search-navbar__toggle js-search-navbar-toggle" type="button"><span class="fa fa-search"></span></button>
-                            <div class="input-group">
-                                <input type="text" name="q" class="form-control" placeholder="{lang key='search'}">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-primary" type="submit">{lang key='search'}</button>
-                                </div>
-                            </div>
-                        </form>
-                    {/if}
-                    {ia_blocks block='account'}
-                    {ia_blocks block='mainmenu'}
-                </div>
-            </div>
-        </nav>
-*}
         {*ia_blocks block='top_categories'*}
         {if isset($smarty.get.elements)}
             {include 'page.elements.tpl'}
@@ -227,22 +163,24 @@
 
                                     {ia_blocks block='top'}
 
-                                    <div class="content__header">
-                                        <h1>{$core.page.title|escape}</h1>
-                                        <ul class="content__actions">
-                                            {foreach $core.actions as $name => $action}
-                                                <li>
-                                                    {if 'action-favorites' == $name}
-                                                        {printFavorites item=$item itemtype=$item.item guests=true}
-                                                    {else}
-                                                        <a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
-                                                            <span class="fa fa-{$name}"></span>
-                                                        </a>
-                                                    {/if}
-                                                </li>
-                                            {/foreach}
-                                        </ul>
-                                    </div>
+                                    {if 'index' != $core.page.name}
+                                        <div class="content__header">
+                                            <h1>{$core.page.title|escape}</h1>
+                                            <ul class="content__actions">
+                                                {foreach $core.actions as $name => $action}
+                                                    <li>
+                                                        {if 'action-favorites' == $name}
+                                                            {printFavorites item=$item itemtype=$item.item guests=true}
+                                                        {else}
+                                                            <a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
+                                                                <span class="fa fa-{$name}"></span>
+                                                            </a>
+                                                        {/if}
+                                                    </li>
+                                                {/foreach}
+                                            </ul>
+                                        </div>
+                                    {/if}
 
                                     {ia_hooker name='smartyFrontBeforeNotifications'}
                                     {include 'notification.tpl'}
@@ -319,15 +257,13 @@
                     <div class="box">
                         <h4 class="box__caption">{lang key='categories'}</h4>
                         <div class="box__content">
-                            <ul class="b-menu">
+                            <div class="b-cats">
                                 {foreach $top_categories as $top_category}
-                                    <li>
-                                        <a href="{ia_url type='url' item='articlecats' data=$top_category}"{if $top_category.nofollow} rel="nofollow"{/if}>
+                                    <a href="{ia_url type='url' item='articlecats' data=$top_category}"{if $top_category.nofollow} rel="nofollow"{/if}>
                                             {$top_category.title|escape}
-                                        </a>
-                                    </li>
+                                    </a>
                                 {/foreach}
-                            </ul>
+                            </div>
                         </div>
                     </div>
                 {/if}

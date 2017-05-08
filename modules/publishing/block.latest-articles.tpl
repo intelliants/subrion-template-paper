@@ -22,7 +22,7 @@
 
             {if $article@iteration % 2 == 0 && !$article@last}
                 </div>
-                <div class="row">
+                <div class="row m-t">
             {/if}
         {/foreach}
     </div>

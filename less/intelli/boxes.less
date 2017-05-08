@@ -5,32 +5,68 @@
 
 .box {
 
-  &--border {
-    padding: 20px;
-    border: 1px solid @border-color;
-  }
+  // &--border {
+  //   padding: 20px;
+  //   border: 1px solid @border-color;
+  // }
 
-  &--featured {
-    border: 1px solid @brand-info;
-    padding: @gap;
-    background: fade(@brand-info, 10%);
-  }
+  // &--featured {
+  //   border: 1px solid @brand-info;
+  //   padding: @gap;
+  //   background: fade(@brand-info, 10%);
+  // }
 
-  &--sponsored {
-    border: 1px solid @brand-warning;
-    padding: @gap;
-    background: fade(@brand-warning, 10%);
+  // &--sponsored {
+  //   border: 1px solid @brand-warning;
+  //   padding: @gap;
+  //   background: fade(@brand-warning, 10%);
+  // }
+
+  &--bg {
+    background: #fff;
+    padding: 30px;
+
+    .box__caption {
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 15px;
+
+      span {
+          padding-left: 15px;
+          background: #fff;
+      }
+    }
   }
 
   + .box,
   + div {
-    margin-top: @vertical-rhythm;
+    margin-top: @vertical-rhythm*2;
   }
 
   &__caption {
     .font-normalize(18px, 0);
     color: @box-caption-color;
     position: relative;
+
+    span {
+      display: inline-block;
+      background: @body-bg;
+      padding-right: 15px;
+      position: relative;
+      z-index: 10;
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      height: 1px;
+      background: fade(@brand-dark, 10%);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 9px;
+      // .translate(0,-50%);
+    }
   }
 
   &__content {
@@ -70,14 +106,15 @@
   position: absolute;
   right: 0;
   top: 50%;
-  margin-top: -12px;
+  margin-top: -15px;
   font-size: 20px;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
   text-decoration: none;
   text-align: center;
-  color: fade(@text-color, 30%);
+  color: @brand-accent;
+  background: @body-bg;
 
   i {
     .fa-icon();
@@ -87,6 +124,6 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    color: fade(@text-color, 50%);
+    color: @brand-accent;
   }
 }

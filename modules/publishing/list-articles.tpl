@@ -1,3 +1,17 @@
+<div class="b-post-alt -lg -{$listing.status}{if $listing.sponsored} -sponsored{/if}{if $listing.featured} -featured{/if}">
+    {if $listing.image}
+        <a class="b-post-alt__image" href="{ia_url type='url' item='articles' data=$listing}">
+            {ia_image file=$listing.image type='thumbnail' title=$listing.title class='img-responsive'}
+        </a>
+    {/if}
+
+    <div class="b-post-alt__body">
+        <h4>{ia_url item='articles' type='link' data=$listing text=$listing.title}</h4>
+        <p>{$listing.summary} <a href="{ia_url type='url' item='articles' data=$listing}">{lang key='continue_reading'}</a></p>
+    </div>
+        <span>{lang key='on'} {$listing.date_added|date_format:$core.config.date_format}</span>
+</div>
+{*
 <div class="a-item -{$listing.status}{if $listing.sponsored} a-item--sponsored{/if}{if $listing.featured} a-item--featured{/if}" id="article-{$listing.id}">
     {if !empty($listing.image)}
         <a class="a-item__image" href="{ia_url type='url' item='articles' data=$listing}">
@@ -46,3 +60,4 @@
         <p>{$listing.summary} <a href="{ia_url type='url' item='articles' data=$listing}">{lang key='continue_reading'}</a></p>
     </div>
 </div>
+*}

@@ -233,7 +233,9 @@
         <block status="active" classname="b-top-cats" position="top_categories" header="0" sticky="1">top_categories</block>
         <block status="active" classname="b-sponsored" position="verytop" sticky="0" pages="index" collapsible="0">sponsored_articles</block>
         <block status="active" classname="b-staff-picks" position="verytop" sticky="0" pages="index" collapsible="0" title="Staff picks">sticky_articles</block>
-        <block status="active" classname="b-latest" position="top" sticky="0" pages="index" collapsible="0" title="Latest additions">latest_articles</block>
+        <block status="active" classname="box--bg" position="top" sticky="0" pages="index" collapsible="0" title="Latest additions">latest_articles</block>
+        <block status="active" classname="b-latest" position="bottom" sticky="0" pages="publishing_home" collapsible="0" title="New articles">new_articles</block>
+        <block status="active" classname="" header="0" position="bottom" sticky="0" pages="index" collapsible="0" title="Featured Categories">priority_categories</block>
     </changeset>
 
     <blocks>
