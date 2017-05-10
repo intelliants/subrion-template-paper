@@ -5,8 +5,8 @@
     <author>Gleb Surinov</author>
     <contributor>Intelliants LLC</contributor>
     <version>1.0.0</version>
-    <date>2017-04-01</date>
-    <compatibility>4.1.0</compatibility>
+    <date>2017-05-10</date>
+    <compatibility>4.1.3</compatibility>
 
     <layout>
         <position menu="1" movable="0">account</position>
