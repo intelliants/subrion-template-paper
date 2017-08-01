@@ -28,6 +28,9 @@
         <p>{$listing.summary} <a href="{ia_url type='url' item='articles' data=$listing}">{lang key='continue_reading'}</a></p>
         <div class="b-post-alt__body__info">
             <span class="pull-left"><span class="fa fa-eye"></span> {$listing.views_num} {if 1 == $listing.views_num}{lang key='view'}{else}{lang key='views'}{/if}</span>
+            {if !empty($listing.category_title)}
+                <p class="b-post-alt__category"><span class="fa fa-folder"></span> <a href="{ia_url type='url' item='articlecats' data=$listing}">{$listing.category_title}</a></p>
+            {/if}
             <div class="b-post-alt__actions">
                 {printFavorites item=$listing itemtype='articles' guests=true}
                 {accountActions item=$listing itemtype='articles'}

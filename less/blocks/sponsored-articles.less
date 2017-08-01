@@ -110,7 +110,18 @@
 
 .b-post-alt {
     position: relative;
-
+    &__category {
+        display: inline-block;
+        margin: 0 0 0 30px;
+        }
+    @media (max-width: @screen-sm) {
+        .b-post-alt__category {
+            margin: 0;
+            display: block;
+            clear: left;
+            line-height: 30px;
+        }
+    }
     &__image {
         display: block;
         text-decoration: none;
@@ -169,13 +180,19 @@
 
     &__actions {
         float: right;
-
         a {
             display: inline-block;
             margin-left: 15px;
         }
     }
-
+    @media (max-width: @screen-sm) {
+        .b-post-alt__actions {
+            float: none;
+             a:first-child {
+                margin: 0;
+             }
+        }
+    }
     &.-lg {
         .clearfix();
 
@@ -192,7 +209,11 @@
             margin-right: 30px;
             float: left;
         }
-
+        @media (max-width: @screen-xs) {
+            .b-post-alt__image {
+                float: none;
+            }
+        }
         .b-post-alt__body {
             overflow: hidden;
 
