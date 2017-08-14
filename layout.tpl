@@ -251,6 +251,8 @@
                     <h4 class="box__caption">{lang key='menu'}</h4>
                     <div class="box__content">
                         {ia_blocks block='mainmenu'}
+                        {include 'language-selector.tpl'}
+                        {include 'currency-selector.tpl'}
                     </div>
                 </div>
                 {if !empty($top_categories)}
