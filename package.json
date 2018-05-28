@@ -18,5 +18,8 @@
     "gulp-notify": "^3.0.0",
     "gulp-sourcemaps": "^2.3.1",
     "gulp-util": "^3.0.7"
+  },
+  "dependencies": {
+    "npm": "^6.1.0"
   }
 }

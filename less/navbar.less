@@ -135,7 +135,13 @@
   margin: @navbar-margin-vertical 0;
   border-right: 1px solid fade(#eaf2f5, 10%);
   padding-right: 30px;
-
+  @media(max-width: @screen-navbar) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 15px;
+    margin: 0;
+  }
   a {
     float: left;
     font-size: 16px;
@@ -160,6 +166,14 @@
   padding: 0 0 0 30px;
   list-style-type: none;
   border-left: 1px solid fade(#eaf2f5, 10%);
+
+  @media(max-width: @screen-navbar) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 15px;
+    margin: 0;
+  }
 
   > li {
     float: left;
