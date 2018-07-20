@@ -56,13 +56,13 @@
                 .nav-inventory > li.active > a:focus,
                 .nav-inventory > li.active > a:hover { color: {$core.config.custom_color_inventory_link_active}; }
 
-                .navbar-default { background-color: {$core.config.custom_color_navbar_bg}; }
-                .navbar-default .navbar-nav > li > a,
-                .navbar-default .navbar-nav > li > a:focus { color: {$core.config.custom_color_navbar_link}; }
-                .navbar-default .navbar-nav > li > a:hover { color: {$core.config.custom_color_navbar_link_hover}; }
-                .navbar-default .navbar-nav > li.active > a,
-                .navbar-default .navbar-nav > li.active > a:focus,
-                .navbar-default .navbar-nav > li.active > a:hover { color: {$core.config.custom_color_navbar_link_active}; }
+                .pushy-content { background-color: {$core.config.custom_color_navbar_bg}; }
+                .pushy-content .b-menu > li > a,
+                .pushy-content .b-menu > li > a:focus { color: {$core.config.custom_color_navbar_link}; }
+                .pushy-content .b-menu > li > a:hover { color: {$core.config.custom_color_navbar_link_hover}; }
+                .pushy-content .b-menu > li.active > a,
+                .pushy-content .b-menu > li.active > a:focus,
+                .pushy-content .b-menu > li.active > a:hover { color: {$core.config.custom_color_navbar_link_active}; }
 
                 .footer-blocks { background: {$core.config.footer_blocks_bg}; }
                 .footer { background: {$core.config.footer_bg}; }
