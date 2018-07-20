@@ -227,7 +227,7 @@
         <menu position="account" status="active">account</menu>
 
         <block status="active" classname="box--border" position="right">common_statistics</block>
-        <block status="active" classname="box--border" position="left">filters</block>
+        <block status="active" classname="box--border" position="right">filters</block>
 
         <block status="active" position="flyout" header="1" sticky="1" collapsible="0">articles_archive</block>
         <block status="active" classname="b-top-cats" position="top_categories" header="0" sticky="1">top_categories</block>
