@@ -167,9 +167,14 @@
   list-style-type: none;
   border-left: 1px solid fade(#eaf2f5, 10%);
 
+  @media (max-width: 991px) {
+    margin: 0;
+    border: 0;
+  }
+
   @media(max-width: @screen-navbar) {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     padding-left: 15px;
     margin: 0;
@@ -289,6 +294,10 @@
     width: 500px;
     top: 50%;
     .translate(-50%,-50%);
+
+    @media (max-width: @grid-float-breakpoint) {
+      width: auto;
+    }
 
     input {
       height: 60px;
