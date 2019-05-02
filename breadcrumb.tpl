@@ -16,7 +16,7 @@
             {if isset($core.page.info.actions)}
                 <div class="action-buttons">
                     {section action $core.page.info.actions max=2}
-                        <a href="{$core.page.info.actions[action].url}" class="btn btn-xs"><span class="fa fa-{$core.page.info.actions[action].icon}"></span> {$core.page.info.actions[action].title|escape}</a>
+                        <a href="{$core.page.info.actions[action].url}" class="btn btn-xs" data-toggle="modal"><span class="fa fa-{$core.page.info.actions[action].icon}"></span> {$core.page.info.actions[action].title|escape}</a>
                     {/section}
 
                     {if count($core.page.info.actions) > 2}
